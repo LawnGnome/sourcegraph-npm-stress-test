@@ -3,7 +3,6 @@ description: Do a bunch of things in NPM
 
 on:
     - repository: github.com/sourcegraph/sourcegraph
-      #- repository: gitlab.com/sourcegraph/sourcegraph
 
 steps:
     - run: yarn install
