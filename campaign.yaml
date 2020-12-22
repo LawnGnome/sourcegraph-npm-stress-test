@@ -1,0 +1,24 @@
+name: npm
+description: Do a bunch of things in NPM
+
+on:
+    - repository: github.com/sourcegraph/sourcegraph
+      #- repository: gitlab.com/sourcegraph/sourcegraph
+
+steps:
+    - run: yarn install
+      container: sg-npm
+
+    - run: yarn upgrade typescript
+      container: sg-npm
+
+    - run: yarn run eslint
+      container: sg-npm
+
+changesetTemplate:
+    title: NPM test
+    body: NPM test
+    branch: npm-test
+    commit:
+        message: NPM test
+    published: false
